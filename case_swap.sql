@@ -1,162 +1,166 @@
--- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: 127.0.0.1
--- Czas generowania: 01 Lip 2018, 22:34
--- Wersja serwera: 10.1.32-MariaDB
--- Wersja PHP: 7.2.5
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: case_swap
+-- ------------------------------------------------------
+-- Server version	8.0.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Baza danych: `booka`
+-- Table structure for table `alte_case`
 --
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `alte_case`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alte_case` (
+  `id_case` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `tara` text,
+  `oras` text,
+  `suprafata` int DEFAULT NULL,
+  `camere` int DEFAULT NULL,
+  `caut_oras` char(255) DEFAULT NULL,
+  PRIMARY KEY (`id_case`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Struktura tabeli dla tabeli `books`
+-- Dumping data for table `alte_case`
 --
 
-CREATE TABLE `books` (
-  `ID_book` int(11) NOT NULL,
-  `title` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `author_first_name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `author_last_name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+LOCK TABLES `alte_case` WRITE;
+/*!40000 ALTER TABLE `alte_case` DISABLE KEYS */;
+INSERT INTO `alte_case` VALUES (1,'garsoniera','Moldova','Chisinau',30,4,'Bucuresti'),(2,'apartament','Romania','Bucuresti',60,2,'Cluj-Napoca'),(3,'casa cu gradina','Spania','Barcelona',150,5,'Madrid'),(4,'villa de lux','Franta','Paris',300,8,'Nisa'),(5,'studio','Italia','Roma',40,1,'Milano'),(6,'penthouse','Germania','Berlin',120,3,'Hamburg'),(7,'loft','Olanda','Amsterdam',80,2,'Rotterdam'),(8,'casuta rurala','Romania','Brasov',100,4,'Sibiu'),(9,'apartament modern','Spania','Madrid',70,2,'Barcelona'),(10,'casa de vacanta','Grecia','Atena',200,6,'Salonic'),(11,'duplex','Italia','Milano',90,3,'Roma'),(12,'garsoniera renovata','Romania','Timisoara',35,1,'Cluj-Napoca'),(13,'apartament cu terasa','Franta','Nisa',80,2,'Paris'),(14,'casa in regim hotelier','Spania','Barcelona',250,7,'Valencia'),(15,'loft industrial','Germania','Hamburg',110,3,'Berlin');
+/*!40000 ALTER TABLE `alte_case` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Zrzut danych tabeli `books`
+-- Table structure for table `casute`
 --
 
-INSERT INTO `books` (`ID_book`, `title`, `author_first_name`, `author_last_name`) VALUES
-(1, 'Crime And Punishment', 'Fyodor', 'Dostoevsky'),
-(2, 'Women', 'Charles', 'Bukowski'),
-(3, 'The Catcher In The Rye', 'Jerome David', 'Salinger'),
-(4, 'Ulysses', 'James', 'Joyce'),
-(5, 'The Trial', 'Franz', 'Kafka'),
-(6, 'The Da Vinci Code', 'Dan', 'Brown'),
-(7, 'The Idiot', 'Fyodor', 'Dostoevsky'),
-(8, 'The Dark Tower', 'Stephen', 'King'),
-(9, 'Pet Semetery', 'Stephen', 'King'),
-(10, 'The Brief History Of Time', 'Stephen', 'Hawking'),
-(11, 'A Clockwork Orange', 'Anthony', 'Burgess'),
-(12, 'Macbeth', 'William', 'Shakespear'),
-(13, 'Harry Potter and The Goblet Of Fire', 'J.K.', 'Rowling'),
-(14, 'Fifty Shades Of Gray', 'E.L.', 'James'),
-(15, 'Pride And Prejudice', 'Jane', 'Austen'),
-(16, 'In Search Of Lost Time', 'Marcel', 'Proust'),
-(17, 'Moby Dick', 'Herman', 'Melville'),
-(18, 'War And Peace', 'Leo', 'Tolstoy'),
-(19, 'Lolita', 'Vladimir', 'Nabokov'),
-(20, 'Heart Of Darkness', 'Joseph', 'Conrad'),
-(21, 'Ninety Eighty Four', 'George', 'Orwell'),
-(22, 'The Hound Of The Baskervilles', 'Arthur Conan', 'Doyle');
-
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `casute`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `casute` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `locatie` char(200) DEFAULT NULL,
+  `tip` char(200) DEFAULT NULL,
+  `suprafata` bigint DEFAULT NULL,
+  `camere` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Struktura tabeli dla tabeli `transactions`
+-- Dumping data for table `casute`
 --
 
+LOCK TABLES `casute` WRITE;
+/*!40000 ALTER TABLE `casute` DISABLE KEYS */;
+INSERT INTO `casute` VALUES (1,'Maldive','Casa',200,5),(2,'Chisinau','garsoniera',30,4),(3,'Bucharest','apartment',80,3),(5,'Tokyo','studio',40,2);
+/*!40000 ALTER TABLE `casute` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contact` (
+  `id_client` int NOT NULL AUTO_INCREMENT,
+  `nume` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `mesaj` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_client`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'dsadada','asdad@gmail.com','sdadasdadasdadasdadasdadasdadasdadasdada'),(2,'Anonim','anonim@gmail.com','ceva anonimceva anonimceva anonim');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `transactions` (
-  `ID_transaction` int(11) NOT NULL,
+  `ID_transaction` int NOT NULL AUTO_INCREMENT,
   `Date_start` date NOT NULL,
   `Date_end` date DEFAULT NULL,
-  `ID_book` int(11) NOT NULL,
-  `ID_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
+  `id_case` int NOT NULL,
+  `ID_user` int NOT NULL,
+  PRIMARY KEY (`ID_transaction`),
+  KEY `transaction_book_fk` (`id_case`),
+  KEY `transaction_user_fk` (`ID_user`),
+  CONSTRAINT `transaction_user_fk` FOREIGN KEY (`ID_user`) REFERENCES `users` (`ID_user`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Struktura tabeli dla tabeli `users`
+-- Dumping data for table `transactions`
 --
 
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (65,'2024-01-19','2024-01-19',1,30),(66,'2024-01-19',NULL,1,30);
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `ID_user` int(11) NOT NULL,
-  `username` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `password` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `email` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ID_user` int NOT NULL AUTO_INCREMENT,
+  `username` text CHARACTER SET utf8mb3 COLLATE utf8mb3_polish_ci NOT NULL,
+  `password` text CHARACTER SET utf8mb3 COLLATE utf8mb3_polish_ci NOT NULL,
+  `email` text CHARACTER SET utf8mb3 COLLATE utf8mb3_polish_ci NOT NULL,
+  PRIMARY KEY (`ID_user`),
+  UNIQUE KEY `ID_user` (`ID_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Zrzut danych tabeli `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID_user`, `username`, `password`, `email`) VALUES
-(28, 'admin', '$2y$10$1.04cbdk4Q9t.WP6etTUguzV4ph9wLB42ROYCc5nHaeBkYcCrVZ2K', 'admin@example.com');
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (28,'admin','$2y$10$1.04cbdk4Q9t.WP6etTUguzV4ph9wLB42ROYCc5nHaeBkYcCrVZ2K','admin@example.com'),(30,'kiwijuice','$2y$10$h1hSBBmRAJRdWjf4CQtkk.yV3iwLw4K.oagnJVs5A10MMzIBsD/F2','kiwijuice@gmail.com');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indeksy dla zrzutów tabel
---
-
---
--- Indeksy dla tabeli `books`
---
-ALTER TABLE `books`
-  ADD PRIMARY KEY (`ID_book`),
-  ADD UNIQUE KEY `ID_book` (`ID_book`);
-
---
--- Indeksy dla tabeli `transactions`
---
-ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`ID_transaction`),
-  ADD KEY `transaction_book_fk` (`ID_book`),
-  ADD KEY `transaction_user_fk` (`ID_user`);
-
---
--- Indeksy dla tabeli `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID_user`),
-  ADD UNIQUE KEY `ID_user` (`ID_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT dla tabeli `books`
---
-ALTER TABLE `books`
-  MODIFY `ID_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT dla tabeli `transactions`
---
-ALTER TABLE `transactions`
-  MODIFY `ID_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
-
---
--- AUTO_INCREMENT dla tabeli `users`
---
-ALTER TABLE `users`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- Ograniczenia dla zrzutów tabel
---
-
---
--- Ograniczenia dla tabeli `transactions`
---
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `transaction_book_fk` FOREIGN KEY (`ID_book`) REFERENCES `books` (`ID_book`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `transaction_user_fk` FOREIGN KEY (`ID_user`) REFERENCES `users` (`ID_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-01-19 21:20:40

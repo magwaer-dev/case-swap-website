@@ -1,9 +1,8 @@
 <?php $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "admin";
 $dbname = "case_swap";
-$con = new mysqli($servername,$username, $password, $dbname);
+$con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {
- die ("Eroare de conectare la MySQL: " . $con->connect_error);
+    die("Eroare de conectare la MySQL: " . $con->connect_error);
 }
-?>
