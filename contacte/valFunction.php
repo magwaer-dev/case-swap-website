@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect('localhost', 'root', 'admin', 'case_swap');
+$db = mysqli_connect('localhost', 'root', '', 'case_swap');
 
 
 

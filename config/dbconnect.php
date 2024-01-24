@@ -1,6 +1,6 @@
 <?php $servername = "localhost";
 $username = "root";
-$password = "admin";
+$password = "";
 $dbname = "case_swap";
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_error) {

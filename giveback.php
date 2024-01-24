@@ -5,7 +5,7 @@ if ($_SESSION['user'] == NULL) {
 }
 $servername = "localhost";
 $username = "root";
-$password = "admin";
+$password = "";
 $dbname = "case_swap";
 $con = new mysqli($servername,$username, $password, $dbname);
 $sql = "UPDATE transactions SET Date_end=CURDATE() WHERE ID_transaction='$_SESSION[transactionid]'";
